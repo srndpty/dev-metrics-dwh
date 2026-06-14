@@ -1,0 +1,10 @@
+/.venv/
+/data/warehouse/*.duckdb
+/data/warehouse/*.duckdb.wal
+/data/warehouse/*.duckdb.tmp
+/data/raw/*.local.*
+/target/
+__pycache__/
+.pytest_cache/
+.dbt/
+logs/

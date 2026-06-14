@@ -1,0 +1,7 @@
+dev_metrics_dwh:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "data/warehouse/dev_metrics.duckdb"
+      threads: 4

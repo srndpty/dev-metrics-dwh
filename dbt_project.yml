@@ -1,0 +1,22 @@
+name: "dev_metrics_dwh"
+version: "1.0.0"
+config-version: 2
+
+profile: "dev_metrics_dwh"
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dev_metrics_dwh:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
