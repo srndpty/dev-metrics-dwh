@@ -60,9 +60,9 @@ uv run dbt build --profiles-dir .
 ### 環境
 
 - 依存を変更したら `uv sync` で `.venv` と `uv.lock` を更新する。
-- **Python 3.13/3.14 は使わない。** dbt-core 1.11 / mashumaro 3.14 が未対応で、
-  import 時にクラッシュする（`UnserializableField` 等）。`requires-python` の上限は
-  意図的に `<3.14` にしてある。
+- **Python は 3.12 に固定する。** dbt-core 1.11 / mashumaro 3.14 は Python 3.14 が
+  未対応で、import 時にクラッシュする（`UnserializableField` 等）。3.13 も未検証のため
+  使わない。`requires-python = ">=3.12,<3.13"` で上限を固定してある。
 
 ### データ
 
@@ -75,7 +75,8 @@ uv run dbt build --profiles-dir .
 ### dbt モデル
 
 - staging は view、marts は table をデフォルトとする（`dbt_project.yml` 参照）。
-- ソースを直接参照せず、staging では `read_csv`／`source()`、下流では `ref()` を使う。
+- staging では当面 `read_csv_auto()` の直読みを許容する（`models/sources.yml` の
+  `source()` への寄せは将来対応）。下流モデルでは必ず `ref()` を使う。
 - 変更したら最低限 `just build` が通ることを確認してからコミットする。
 
 ### コミット
