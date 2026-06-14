@@ -1,0 +1,7 @@
+project,date,commit_count,test_count,coverage_percent,build_size_mb
+kobato-eyes,2026-06-10,5,120,72.5,1950
+kobato-eyes,2026-06-11,3,128,75.2,1940
+omnidesk,2026-06-10,4,314,83.79,120
+omnidesk,2026-06-11,2,320,84.10,118
+folder-agent,2026-06-14,1,0,,8
+fastgrep-rs,2026-06-14,1,0,,2

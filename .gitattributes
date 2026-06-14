@@ -1,0 +1,2 @@
+# Normalize CSV line endings to LF so DuckDB's CSV sniffer doesn't fail on mixed EOLs
+data/raw/*.csv text eol=lf
